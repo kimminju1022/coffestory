@@ -1,0 +1,25 @@
+nav a{
+    text-decoration: none;
+    color: rgba(106, 59, 16, 0.886);
+    margin: 10px;
+}
+
+nav:first-child{
+    display: flex;
+    justify-content: center;
+}
+
+nav:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#horrizontal-underline{
+    position: absolute;
+    width: 100%;
+    background-color: bisque;
+    top:60px;
+    left: 20px;
+    height: 4px;
+}
