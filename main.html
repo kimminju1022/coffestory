@@ -24,9 +24,18 @@
             향긋한 향과 힘이 나는 한 잔의 응원이 함께 하기를
         </h2>
     </div>
-    <div id="chat-box"></div>
+    
+    <!-- <div id="chat-box"></div>
     <input type="text" id="message" class="message" placeholder="메시지를 입력하세요">
-    <button onclick="sendMessage()">전송</button>
+    <button onclick="sendMessage()">전송</button> -->
+    <div class="chat-container">
+        <div id="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="message" class="message" placeholder="메시지를 입력하세요">
+            <button onclick="sendMessage()">전송</button>
+        </div>
+    </div>
+    
 
     <script>
         function sendMessage() {
