@@ -4,31 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY coffe storry</title>
+    <title>MY coffee story</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav>
-        <a href="#">원두와 생두</a>
-        <a href="#">커피 메뉴</a>
-        <a href="#">맛집소개</a>
+        <a href="main.html">Main</a>
+        <a href="bean.html">원두와 생두</a>
+        <a href="menu.html">커피 메뉴</a>
+        <a href="introduce.html">맛집소개</a>
     </nav>
-    <nav>
-        <a href="#">원두와 생두</a>
-        <a href="#">커피 메뉴</a>
-        <a href="#">맛집소개</a>
-    </nav>
-    <h1>
-        커피 한 잔 어때?
-    </h1>
     <div>
-        
+        <h1 class="h1">
+            커피 한 잔 할래요?
+        </h1>
+        <h2 class="h2">
+            어느 날의 그대가 어느 곳에 머물더라도<br>
+            향긋한 향과 힘이 나는 한 잔의 응원이 함께 하기를
+        </h2>
     </div>
-    <p>
-        홈페이지 1p index.html
-    </p>
+    <div id="chat-box"></div>
+    <input type="text" id="message" class="message" placeholder="메시지를 입력하세요">
+    <button onclick="sendMessage()">전송</button>
 
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById("message");
+            var message = messageInput.value;
+            var chatBox = document.getElementById("chat-box");
+
+            if (message.trim() !== "") {
+                var messageElement = document.createElement("div");
+                var messageText = document.createElement("span");
+                messageText.textContent = message;
+                var deleteButton = document.createElement("span");
+                deleteButton.textContent = "삭제";
+                deleteButton.classList.add("delete-btn");
+                deleteButton.addEventListener("click", function () {
+                    messageElement.remove();
+                });
+                messageElement.appendChild(messageText);
+                messageElement.appendChild(deleteButton);
+                messageElement.classList.add("message");
+                chatBox.appendChild(messageElement);
+                chatBox.scrollTop = chatBox.scrollHeight;
+                messageInput.value = "";
+            }
+        }
+    </script>
 </body>
 
 </html>
